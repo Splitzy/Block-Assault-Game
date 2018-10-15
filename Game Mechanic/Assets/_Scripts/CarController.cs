@@ -8,6 +8,7 @@ public class CarController : MonoBehaviour
     public float maxTorque;
     public float maxAngle;
     public float brakeTorque;
+    public float speed;
 
     public void FixedUpdate()
     {
