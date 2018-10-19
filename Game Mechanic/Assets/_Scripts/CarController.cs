@@ -9,6 +9,12 @@ public class CarController : MonoBehaviour
     public float maxAngle;
     public float brakeTorque;
     public float speed;
+    public Transform car;
+
+    public void Start()
+    {
+        car = transform;
+    }
 
     public void FixedUpdate()
     {
@@ -28,6 +34,12 @@ public class CarController : MonoBehaviour
                 wheel.leftWheel.motorTorque = motor;
                 wheel.rightWheel.motorTorque = motor;
             }
+        }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            car.position = new Vector3(0.0f, 0.6f, 0.0f);
+            car.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
         }
     }
 }
