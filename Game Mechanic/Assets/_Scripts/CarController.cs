@@ -8,7 +8,6 @@ public class CarController : MonoBehaviour
     public float maxTorque;
     public float maxAngle;
     public float brakeTorque;
-    public float speed;
     public Transform car;
 
     public void Start()
@@ -20,6 +19,15 @@ public class CarController : MonoBehaviour
     {
         float motor = maxTorque * Input.GetAxis("Vertical");
         float steering = maxAngle * Input.GetAxis("Horizontal");
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            brakeTorque = 100000;
+        }
+        else
+        {
+            brakeTorque = 0;
+        }
 
         foreach (WheelInfo wheel in wheelInfo)
         {
@@ -33,15 +41,21 @@ public class CarController : MonoBehaviour
             {
                 wheel.leftWheel.motorTorque = motor;
                 wheel.rightWheel.motorTorque = motor;
+                wheel.leftWheel.brakeTorque = brakeTorque;
+                wheel.rightWheel.brakeTorque = brakeTorque;
+            }
+
+            if (Input.GetKey(KeyCode.R))
+            {
+                car.position = new Vector3(0.0f, 0.6f, 0.0f);
+                car.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+
             }
         }
 
-        if (Input.GetKey(KeyCode.R))
-        {
-            car.position = new Vector3(0.0f, 0.6f, 0.0f);
-            car.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
-        }
+       
     }
+    
 }
 
 [System.Serializable]
