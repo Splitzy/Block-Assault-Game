@@ -16,8 +16,8 @@ public class TimerController : MonoBehaviour {
 
         int minutes = (int)time / 60;
         int seconds = (int)time % 60;
-        float fraction = ((float)time * 100f) % 100f;
+        double fraction = ((double)time * 100) % 100;
 
-        timerLabel.text = minutes.ToString() + ":" + seconds.ToString() + ":" + fraction.ToString();
+        timerLabel.text = minutes.ToString() + ":" + seconds.ToString() + ":" + fraction.ToString("f0");
 	}
 }

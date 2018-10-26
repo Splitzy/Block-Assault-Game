@@ -9,10 +9,12 @@ public class CarController : MonoBehaviour
     public float maxAngle;
     public float brakeTorque;
     public Transform car;
+    //public Rigidbody rb;
 
     public void Start()
     {
         car = transform;
+        //rb = GetComponent<Rigidbody>();
     }
 
     public void FixedUpdate()
@@ -22,7 +24,7 @@ public class CarController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            brakeTorque = 100000;
+            brakeTorque = 1000000;
         }
         else
         {
@@ -43,13 +45,13 @@ public class CarController : MonoBehaviour
                 wheel.rightWheel.motorTorque = motor;
                 wheel.leftWheel.brakeTorque = brakeTorque;
                 wheel.rightWheel.brakeTorque = brakeTorque;
+                //rb.AddForce(new Vector3(0f, motor, 0f));    
             }
 
             if (Input.GetKey(KeyCode.R))
             {
                 car.position = new Vector3(0.0f, 0.6f, 0.0f);
                 car.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
-
             }
         }
 
