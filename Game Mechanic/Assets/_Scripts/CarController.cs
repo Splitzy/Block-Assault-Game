@@ -41,8 +41,8 @@ public class CarController : MonoBehaviour
 
             if (wheel.motor)
             {
-                wheel.leftWheel.motorTorque = motor;
-                wheel.rightWheel.motorTorque = motor;
+                wheel.leftWheel.motorTorque = motor * 2f;
+                wheel.rightWheel.motorTorque = motor * 2f;
                 wheel.leftWheel.brakeTorque = brakeTorque;
                 wheel.rightWheel.brakeTorque = brakeTorque;
                 //rb.AddForce(new Vector3(0f, motor, 0f));    
