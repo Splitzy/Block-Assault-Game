@@ -189,8 +189,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285909040294644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0009, y: 0.029999992, z: 0.025800016}
-  m_LocalScale: {x: 0.039591856, y: 0.12727241, z: 0.12095241}
+  m_LocalPosition: {x: 0.0009000216, y: 0.030000413, z: 0.03}
+  m_LocalScale: {x: 0.039591864, y: 0.1272725, z: 0.1209525}
   m_Children: []
   m_Father: {fileID: 4787937969518722}
   m_RootOrder: 0
@@ -202,8 +202,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414240845873888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00030000135, y: 0.10699992, z: 0.023800012}
-  m_LocalScale: {x: 0.039591856, y: 0.12727241, z: 0.12095241}
+  m_LocalPosition: {x: 0.00029998165, y: 0.10700034, z: 0.020000001}
+  m_LocalScale: {x: 0.039591864, y: 0.1272725, z: 0.1209525}
   m_Children: []
   m_Father: {fileID: 4632179715137378}
   m_RootOrder: 0
@@ -274,8 +274,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907265700437104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0019887676, y: -0.06338241, z: 0.02080002}
-  m_LocalScale: {x: 0.03959186, y: 0.12727247, z: 0.12095245}
+  m_LocalPosition: {x: 0.0019887856, y: -0.06338228, z: 0.03}
+  m_LocalScale: {x: 0.039591867, y: 0.12727258, z: 0.12095255}
   m_Children: []
   m_Father: {fileID: 4893217524067058}
   m_RootOrder: 0
@@ -301,8 +301,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1686230227784008}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0008, y: -0.08, z: 0.0238}
-  m_LocalScale: {x: 0.039591856, y: 0.12727241, z: 0.12095241}
+  m_LocalPosition: {x: 0.00079997093, y: -0.080000736, z: 0.020000001}
+  m_LocalScale: {x: 0.039591867, y: 0.12727258, z: 0.12095253}
   m_Children: []
   m_Father: {fileID: 4456415219819718}
   m_RootOrder: 0
@@ -538,7 +538,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051840572290340}
   serializedVersion: 2
-  m_Mass: 1000
+  m_Mass: 850
   m_Drag: 0
   m_AngularDrag: 0.5
   m_UseGravity: 1
@@ -578,10 +578,11 @@ MonoBehaviour:
     rightWheel: {fileID: 146133492737000016}
     motor: 0
     steering: 0
-  maxTorque: 400
+  maxTorque: 500
   maxAngle: 45
   brakeTorque: 0
   car: {fileID: 4711679465505444}
+  rb: {fileID: 0}
 --- !u!136 &136073357028388172
 CapsuleCollider:
   m_ObjectHideFlags: 1
