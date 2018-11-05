@@ -18,6 +18,18 @@ public class TimerController : MonoBehaviour {
         int seconds = (int)time % 60;
         double fraction = ((double)time * 100) % 100;
 
-        timerLabel.text = minutes.ToString() + ":" + seconds.ToString() + ":" + fraction.ToString("f0");
+        if (minutes < 10 && seconds < 10)
+        {
+            timerLabel.text = "0" + minutes.ToString() + ":" + "0" + seconds.ToString() + ":" + fraction.ToString("f0");
+        }
+        else if (minutes < 10)
+        {
+            timerLabel.text = "0" + minutes.ToString() + ":" + seconds.ToString() + ":" + fraction.ToString("f0");
+        }
+        else
+        {
+            timerLabel.text = minutes.ToString() + ":" + seconds.ToString() + ":" + fraction.ToString("f0");
+        }
+        
 	}
 }

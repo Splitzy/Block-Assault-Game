@@ -4,23 +4,41 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public bool shouldRotate = true;
+
     public Transform target;
-    public float height;
     public float distance;
-    public float time = 1f;
+    public float height;
+    public float heightDamp = 2.0f;
+    public float rotationDamp = 3.0f;
+    float angle;
+    float wantedHeight;
+    float currentAngle;
+    float currentHeight;
+    Quaternion currentRot;
 
     void LateUpdate()
     {
-        //we get the rotation angle of the player
-        float angle = target.rotation.eulerAngles.y;
+        if(target)
+        {
+            angle = target.eulerAngles.y;
+            wantedHeight = target.position.y + height;
+            currentAngle = transform.eulerAngles.y;
+            currentHeight = transform.position.y;
 
-        //we rotate the camera with the same angle
-        transform.rotation = Quaternion.Euler(new Vector3(0.0f, angle, 0.0f));
+            currentAngle = Mathf.LerpAngle(currentAngle, angle, rotationDamp * Time.deltaTime);
+            currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamp * Time.deltaTime);
 
-        //we calculate the cartesian coordinates using the polar coordinates
-        Vector3 offsetPosition = new Vector3(-distance * Mathf.Sin(angle * Mathf.Deg2Rad), height, -distance * Mathf.Cos(angle * Mathf.Deg2Rad));
+            currentRot = Quaternion.Euler(0, currentAngle, 0);
 
-        //we use the player position plus the offset calculated above
-        transform.position = Vector3.Lerp(target.position, target.position + offsetPosition, time);
+            transform.position = target.position;
+            transform.position -= currentRot * Vector3.forward * distance;
+
+            transform.position = new Vector3(transform.position.x, currentHeight, transform.position.z);
+            if(shouldRotate)
+            {
+                transform.LookAt(target);
+            }
+        }
     }
 }

@@ -289,10 +289,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a136cfd404b59464b969b106de0e8b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldRotate: 1
   target: {fileID: 955382647}
+  distance: 6
   height: 2
-  distance: 7
-  time: 1
+  heightDamp: 2
+  rotationDamp: 3
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
