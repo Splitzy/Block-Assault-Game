@@ -17,6 +17,11 @@ public class CarController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    void Update()
+    {
+        
+    }
+
     public void FixedUpdate()
     {
         float motor = maxTorque * Input.GetAxis("Vertical");
@@ -46,12 +51,6 @@ public class CarController : MonoBehaviour
                 wheel.leftWheel.brakeTorque = brakeTorque;
                 wheel.rightWheel.brakeTorque = brakeTorque;
                 rb.AddForce(new Vector3(motor * 1.5f, 0, 0));
-            }
-
-            if (Input.GetKey(KeyCode.R))
-            {
-                car.position = new Vector3(0.0f, 0.6f, 0.0f);
-                car.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
             }
         }
 

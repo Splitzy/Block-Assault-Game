@@ -582,7 +582,7 @@ MonoBehaviour:
   maxAngle: 45
   brakeTorque: 0
   car: {fileID: 4711679465505444}
-  rb: {fileID: 0}
+  rb: {fileID: 54096194507410666}
 --- !u!136 &136073357028388172
 CapsuleCollider:
   m_ObjectHideFlags: 1
