@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class TimerController : MonoBehaviour {
 
     public Text timerLabel;
-
+    public GameObject star1;
+    public GameObject star2;
+    private int stars = 3;
+    public float threeStarTime;
+    public float twoStarTime;
     private float time;
 	
 	// Update is called once per frame
@@ -29,6 +33,22 @@ public class TimerController : MonoBehaviour {
         else
         {
             timerLabel.text = minutes.ToString() + ":" + seconds.ToString() + ":" + fraction.ToString("f0");
+        }
+
+        if (Time.deltaTime <= threeStarTime)
+        {
+            timerLabel.color = Color.green;
+        }
+        else if (Time.deltaTime > threeStarTime && Time.deltaTime <= twoStarTime)
+        {
+            timerLabel.color = Color.yellow;
+            star1.SetActive(false);
+        }
+        else
+        {
+            timerLabel.color = Color.red;
+            star1.SetActive(false);
+            star2.SetActive(false);
         }
     }
 }
