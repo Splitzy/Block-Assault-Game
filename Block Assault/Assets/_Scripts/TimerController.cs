@@ -46,11 +46,11 @@ public class TimerController : MonoBehaviour {
             timerLabel.text = minutes.ToString() + ":" + seconds.ToString() + ":" + fraction.ToString("f0");
         }
 
-        if (Time.deltaTime <= threeStarTime)
+        if (time <= threeStarTime)
         {
             timerLabel.color = Color.green;
         }
-        else if (Time.deltaTime > threeStarTime && Time.deltaTime <= twoStarTime)
+        else if (time > threeStarTime && time <= twoStarTime)
         {
             timerLabel.color = Color.yellow;
             star1.SetActive(false);
