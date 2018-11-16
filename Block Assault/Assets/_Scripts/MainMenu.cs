@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
-	
+    public GameObject mainMenuUI;
+    public GameObject levelSelectUI;
 
 	public void PlayGame()
     {
@@ -20,6 +21,15 @@ public class MainMenu : MonoBehaviour {
     public void LoadLevelSelect()
     {
         Debug.Log("Loading Level Select");
+        mainMenuUI.SetActive(false);
+        levelSelectUI.SetActive(true);
+    }
+
+    public void Return()
+    {
+        Debug.Log("Returning to main menu");
+        levelSelectUI.SetActive(false);
+        mainMenuUI.SetActive(true);
     }
 
     public void QuitGame()

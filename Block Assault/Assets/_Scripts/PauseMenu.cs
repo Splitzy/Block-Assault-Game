@@ -55,4 +55,12 @@ public class PauseMenu : MonoBehaviour {
     {
         Debug.Log("Loading Options");
     }
+
+    public void Restart()
+    {
+        Debug.Log("Restarting game");
+        SceneManager.LoadScene("Level 1");
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
 }
