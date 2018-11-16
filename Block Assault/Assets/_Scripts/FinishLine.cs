@@ -6,6 +6,12 @@ public class FinishLine : MonoBehaviour {
 
     public GameObject checkpoint;
     public GameObject WinUI;
+    GameObject player;
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -13,6 +19,7 @@ public class FinishLine : MonoBehaviour {
         {
             Destroy(checkpoint);
             WinUI.SetActive(true);
+            TimerController.Finish();
 
         }
         Destroy(gameObject);

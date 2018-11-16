@@ -8,6 +8,7 @@ public class TimerController : MonoBehaviour {
     public Text timerLabel;
     public GameObject star1;
     public GameObject star2;
+    static bool isFinished = false;
     private int stars = 3;
     public float threeStarTime;
     public float twoStarTime;
@@ -21,6 +22,11 @@ public class TimerController : MonoBehaviour {
         int minutes = (int)time / 60;
         int seconds = (int)time % 60;
         double fraction = ((double)time * 100) % 100;
+
+        if(isFinished == true)
+        {
+            return;
+        }
 
         if (minutes < 10 && seconds < 10)
         {
@@ -50,5 +56,10 @@ public class TimerController : MonoBehaviour {
             star1.SetActive(false);
             star2.SetActive(false);
         }
+    }
+
+    public static void Finish()
+    {
+        isFinished = true;
     }
 }
