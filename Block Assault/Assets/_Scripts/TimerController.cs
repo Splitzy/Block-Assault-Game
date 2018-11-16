@@ -8,14 +8,19 @@ public class TimerController : MonoBehaviour {
     public Text timerLabel;
     public GameObject star1;
     public GameObject star2;
-    static bool isFinished = false;
+    static bool isFinished;
     private int stars = 3;
     public float threeStarTime;
     public float twoStarTime;
     private float time;
-	
-	// Update is called once per frame
-	void Update()
+
+    private void Start()
+    {
+        isFinished = false;
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         time += Time.deltaTime;
 
