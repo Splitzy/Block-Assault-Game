@@ -9,12 +9,10 @@ public class CarController : MonoBehaviour
     public float maxAngle;
     public float brakeTorque;
     public Transform car;
-    public Rigidbody rb;
 
     public void Start()
     {
         car = transform;
-        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -50,7 +48,6 @@ public class CarController : MonoBehaviour
                 wheel.rightWheel.motorTorque = motor * 2f;
                 wheel.leftWheel.brakeTorque = brakeTorque;
                 wheel.rightWheel.brakeTorque = brakeTorque;
-                rb.AddForce(new Vector3(motor * 1.5f, 0, 0));
             }
         }
 
