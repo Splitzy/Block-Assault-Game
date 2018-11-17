@@ -9,14 +9,15 @@ public class TimerController : MonoBehaviour {
     public GameObject star1;
     public GameObject star2;
     static bool isFinished;
-    private int stars = 3;
+    //private int stars = 3;
     public static float threeStarTime = 50;
-    public static float twoStarTime = 80;
+    public static float twoStarTime = 90;
     public static float time;
 
     private void Start()
     {
         isFinished = false;
+        time = 0;
     }
 
     // Update is called once per frame

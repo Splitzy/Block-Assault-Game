@@ -7,8 +7,8 @@ public class FinishLine : MonoBehaviour {
 
     public GameObject checkpoint;
     public GameObject WinUI;
-    GameObject player;
     public Text starTxt;
+    GameObject player;
 
     void Start()
     {
