@@ -8,6 +8,8 @@ public class FinishLine : MonoBehaviour {
     public GameObject checkpoint;
     public GameObject WinUI;
     public Text starTxt;
+    public ParticleSystem confetti1;
+    public ParticleSystem confetti2;
     GameObject player;
 
     void Start()
@@ -19,8 +21,10 @@ public class FinishLine : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(checkpoint);
+            confetti1.Play();
+            confetti2.Play();
             WinUI.SetActive(true);
+            Destroy(checkpoint);
             TimerController.Finish();
             if (TimerController.time <= TimerController.threeStarTime)
             {
