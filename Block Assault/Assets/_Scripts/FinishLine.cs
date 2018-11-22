@@ -44,8 +44,8 @@ public class FinishLine : MonoBehaviour {
             {
                 starTxt.text = "YOU WON 1 STAR!";
             }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
 
