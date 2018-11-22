@@ -10,16 +10,16 @@ public class FinishLine : MonoBehaviour {
     public Text starTxt;
     public ParticleSystem confetti1;
     public ParticleSystem confetti2;
-    GameObject player;
+    //GameObject player;
     [SerializeField]
     private GameObject playerCamera;
     [SerializeField]
     private GameObject winCamera;
 
-    void Start()
-    {
-        player = GameObject.FindWithTag("Player");
-    }
+    //void Start()
+    //{
+    //    player = GameObject.FindWithTag("Player");
+    //}
 
     void OnTriggerEnter(Collider other)
     {
