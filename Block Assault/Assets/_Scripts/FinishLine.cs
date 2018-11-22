@@ -11,6 +11,10 @@ public class FinishLine : MonoBehaviour {
     public ParticleSystem confetti1;
     public ParticleSystem confetti2;
     GameObject player;
+    [SerializeField]
+    private GameObject playerCamera;
+    [SerializeField]
+    private GameObject winCamera;
 
     void Start()
     {
@@ -21,6 +25,8 @@ public class FinishLine : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            playerCamera.SetActive(false);
+            winCamera.SetActive(true);
             confetti1.Play();
             confetti2.Play();
             WinUI.SetActive(true);
