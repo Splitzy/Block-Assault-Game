@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class FinishLine : MonoBehaviour {
 
     public GameObject checkpoint;
-    public GameObject WinUI;
+    public GameObject winUI;
+    public GameObject pauseUI;
     public Text starTxt;
     public ParticleSystem confetti1;
     public ParticleSystem confetti2;
@@ -25,11 +26,12 @@ public class FinishLine : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            Destroy(pauseUI);
             playerCamera.SetActive(false);
             winCamera.SetActive(true);
             confetti1.Play();
             confetti2.Play();
-            WinUI.SetActive(true);
+            winUI.SetActive(true);
             Destroy(checkpoint);
             TimerController.Finish();
             if (TimerController.time <= TimerController.threeStarTime)

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
     public GameObject mainMenuUI;
     public GameObject levelSelectUI;
+    public GameObject settingsUI;
 
 	public void PlayGame()
     {
@@ -16,6 +17,8 @@ public class MainMenu : MonoBehaviour {
     public void LoadOptions()
     {
         Debug.Log("Loading Options");
+        settingsUI.SetActive(true);
+        mainMenuUI.SetActive(false);
     }
 
     public void LoadLevelSelect()
@@ -29,6 +32,7 @@ public class MainMenu : MonoBehaviour {
     {
         Debug.Log("Returning to main menu");
         levelSelectUI.SetActive(false);
+        settingsUI.SetActive(false);
         mainMenuUI.SetActive(true);
     }
 
