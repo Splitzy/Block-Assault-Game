@@ -44,14 +44,12 @@ public class CarController : MonoBehaviour
 
             if (wheel.motor)
             {
-                wheel.leftWheel.motorTorque = motor * 2f;
-                wheel.rightWheel.motorTorque = motor * 2f;
+                wheel.leftWheel.motorTorque = motor * 1.5f;
+                wheel.rightWheel.motorTorque = motor * 1.5f;
                 wheel.leftWheel.brakeTorque = brakeTorque;
                 wheel.rightWheel.brakeTorque = brakeTorque;
             }
         }
-
-       
     }
     
 }
