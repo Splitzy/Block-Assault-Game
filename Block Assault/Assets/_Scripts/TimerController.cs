@@ -10,8 +10,8 @@ public class TimerController : MonoBehaviour {
     public GameObject star2;
     static bool isFinished;
     //private int stars = 3;
-    public static float threeStarTime = 50;
-    public static float twoStarTime = 90;
+    public static float threeStarTime = 60;
+    public static float twoStarTime = 120;
     public static float time;
 
     private void Start()
