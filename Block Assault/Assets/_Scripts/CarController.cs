@@ -9,6 +9,8 @@ public class CarController : MonoBehaviour
     public float maxAngle;
     public float brakeTorque;
     public Transform car;
+    public ParticleSystem smokeL;
+    public ParticleSystem smokeR;
 
     public void Start()
     {
@@ -28,10 +30,14 @@ public class CarController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             brakeTorque = 1000000;
+            smokeL.Play();
+            smokeR.Play();
         }
         else
         {
             brakeTorque = 0;
+            smokeL.Stop();
+            smokeR.Stop();
         }
 
         foreach (WheelInfo wheel in wheelInfo)
