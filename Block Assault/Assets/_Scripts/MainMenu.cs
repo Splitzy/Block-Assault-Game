@@ -8,7 +8,14 @@ public class MainMenu : MonoBehaviour {
     public GameObject levelSelectUI;
     public GameObject settingsUI;
 
-	public void PlayGame()
+    void Start()
+    {
+        mainMenuUI.SetActive(true);
+        levelSelectUI.SetActive(false);
+        settingsUI.SetActive(false);
+    }
+
+    public void PlayGame()
     {
         Debug.Log("Playing game...");
         SceneManager.LoadScene("Level 1");
