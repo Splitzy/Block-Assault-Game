@@ -11,10 +11,11 @@ public class CarController : MonoBehaviour
     public Transform car;
     public ParticleSystem smokeL;
     public ParticleSystem smokeR;
-
     public AudioSource carSource;
+    
+    public float EngineRev { get; private set; }
+    public float AccelInput { get; private set; }
 
-    [SerializeField]
     private Rigidbody rb;
 
     public void Start()
@@ -25,11 +26,11 @@ public class CarController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        Debug.Log(Input.GetAxis("Vertical"));
+        //Debug.Log(Input.GetAxis("Vertical"));
         float motor = maxTorque * Input.GetAxis("Vertical");
         float steering = maxAngle * Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             brakeTorque = 1000000;
             smokeL.Play();
@@ -61,7 +62,6 @@ public class CarController : MonoBehaviour
             }
         }
     }
-    
 }
 
 [System.Serializable]
