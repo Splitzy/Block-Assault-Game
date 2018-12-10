@@ -12,9 +12,7 @@ public class CarController : MonoBehaviour
     public ParticleSystem smokeL;
     public ParticleSystem smokeR;
 
-    public AudioSource carBreak;
-    public AudioSource carStart;
-    public AudioSource carDrive;
+    public AudioSource carSource;
 
     [SerializeField]
     private Rigidbody rb;
@@ -22,12 +20,8 @@ public class CarController : MonoBehaviour
     public void Start()
     {
         car = transform;
+        rb = GetComponent<Rigidbody>();
     }
-
-    //void Update()
-    //{
-
-    //}
 
     public void FixedUpdate()
     {
@@ -40,13 +34,14 @@ public class CarController : MonoBehaviour
             brakeTorque = 1000000;
             smokeL.Play();
             smokeR.Play();
-            carBreak.Play();
+            carSource.Play();
         }
         else
         {
             brakeTorque = 0;
             smokeL.Stop();
             smokeR.Stop();
+            carSource.Stop();
         }
 
         foreach (WheelInfo wheel in wheelInfo)
