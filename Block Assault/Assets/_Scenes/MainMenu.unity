@@ -2945,6 +2945,16 @@ Prefab:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114272739136881160, guid: d781a2d9777bd4441a485c0acb15953f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82331097287161696, guid: d781a2d9777bd4441a485c0acb15953f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d781a2d9777bd4441a485c0acb15953f, type: 2}
   m_IsPrefabParent: 0
