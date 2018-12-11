@@ -7,12 +7,14 @@ public class MainMenu : MonoBehaviour {
     public GameObject mainMenuUI;
     public GameObject levelSelectUI;
     public GameObject settingsUI;
+    public GameObject controlsUI;
 
     void Start()
     {
         mainMenuUI.SetActive(true);
         levelSelectUI.SetActive(false);
         settingsUI.SetActive(false);
+        controlsUI.SetActive(false);
     }
 
     public void PlayGame()
@@ -33,6 +35,18 @@ public class MainMenu : MonoBehaviour {
         Debug.Log("Loading Level Select");
         mainMenuUI.SetActive(false);
         levelSelectUI.SetActive(true);
+    }
+
+    public void LoadControls()
+    {
+        settingsUI.SetActive(false);
+        controlsUI.SetActive(true);
+    }
+
+    public void ReturnFromControls()
+    {
+        settingsUI.SetActive(true);
+        controlsUI.SetActive(false);
     }
 
     public void Return()
