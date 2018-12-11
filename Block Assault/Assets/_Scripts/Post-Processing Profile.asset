@@ -79,9 +79,9 @@ MonoBehaviour:
   motionBlur:
     m_Enabled: 1
     m_Settings:
-      shutterAngle: 215
+      shutterAngle: 59
       sampleCount: 10
-      frameBlending: 0.193
+      frameBlending: 0.029
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
