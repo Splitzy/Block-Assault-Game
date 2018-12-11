@@ -23,6 +23,9 @@ public class CarAudio : MonoBehaviour {
     public float dopplerLevel = 1;                                              // The mount of doppler effect used in the audio
     public bool useDoppler = true;                                              // Toggle for using doppler
 
+    public GameObject camera;
+    public GameObject camera2;
+
     private AudioSource LowAccel; // Source for the low acceleration sounds
     private AudioSource LowDecel; // Source for the low deceleration sounds
     private AudioSource HighAccel; // Source for the high acceleration sounds
@@ -67,8 +70,16 @@ public class CarAudio : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
+        float camDist;
         // get the distance to main camera
-        float camDist = (Camera.main.transform.position - transform.position).sqrMagnitude;
+        if(camera == null)
+        {
+            camDist = (camera2.transform.position - transform.position).sqrMagnitude;
+        }
+        else
+        {
+            camDist = (camera.transform.position - transform.position).sqrMagnitude;
+        }
 
         // stop sound if the object is beyond the maximum roll off distance
         if (StartedSound && camDist > maxRolloffDistance * maxRolloffDistance)
