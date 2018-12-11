@@ -35,14 +35,14 @@ public class CarController : MonoBehaviour
             brakeTorque = 1000000;
             smokeL.Play();
             smokeR.Play();
-            carSource.Play();
+            AudioPlay();
         }
         else
         {
             brakeTorque = 0;
             smokeL.Stop();
             smokeR.Stop();
-            carSource.Stop();
+            AudioStop();
         }
 
         foreach (WheelInfo wheel in wheelInfo)
@@ -60,6 +60,22 @@ public class CarController : MonoBehaviour
                 wheel.leftWheel.brakeTorque = brakeTorque;
                 wheel.rightWheel.brakeTorque = brakeTorque;
             }
+        }
+    }
+
+    private void AudioPlay()
+    {
+        if(!carSource.isPlaying)
+        {
+            carSource.Play();
+        }
+    }
+
+    private void AudioStop()
+    {
+        if(carSource.isPlaying)
+        {
+            carSource.Stop();
         }
     }
 }
