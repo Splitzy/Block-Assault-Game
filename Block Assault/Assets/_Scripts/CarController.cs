@@ -17,6 +17,7 @@ public class CarController : MonoBehaviour
     public float AccelInput { get; private set; }
 
     private Rigidbody rb;
+    private float TopSpeed = 150;
 
     public void Start()
     {
@@ -26,13 +27,17 @@ public class CarController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        //Debug.Log(Input.GetAxis("Vertical"));
         float motor = maxTorque * Input.GetAxis("Vertical");
         float steering = maxAngle * Input.GetAxis("Horizontal");
 
+        if (motor > TopSpeed)
+        {
+            motor = TopSpeed;
+        }
+
         if (Input.GetKey(KeyCode.Space))
         {
-            brakeTorque = 1000000;
+            brakeTorque = 100000000;
             smokeL.Play();
             smokeR.Play();
             AudioPlay();

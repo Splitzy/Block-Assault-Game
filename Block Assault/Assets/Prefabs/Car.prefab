@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 54056151762481350}
   - component: {fileID: 65745237466556906}
   - component: {fileID: 114566724851043762}
+  - component: {fileID: 114272739136881160}
   - component: {fileID: 82331097287161696}
   m_Layer: 0
   m_Name: Car
@@ -364,7 +365,8 @@ AudioSource:
   m_GameObject: {fileID: 1998478450647274}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 1e07e26c88197ad42a584d6b8e1a4da5,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: f1e3a531429c2ca4991e9757cc5b4a3f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -411,7 +413,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -451,6 +453,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114272739136881160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998478450647274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c641ba6197bbad84da189e8cd1157405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engineSoundStyle: 1
+  lowAccelClip: {fileID: 8300000, guid: 3f176153faf3592478dc3993454d44d9, type: 3}
+  lowDecelClip: {fileID: 8300000, guid: add61966320009044a27c32679b9dbf5, type: 3}
+  highAccelClip: {fileID: 8300000, guid: 1e194e53ef97a284281609bcd4a5fb09, type: 3}
+  highDecelClip: {fileID: 8300000, guid: 1c452d25d96757142aa46090691aac17, type: 3}
+  pitchMultiplier: 1
+  lowPitchMin: 1
+  lowPitchMax: 6
+  highPitchMultiplier: 0.25
+  maxRolloffDistance: 500
+  dopplerLevel: 1
+  useDoppler: 1
+  camera: {fileID: 0}
+  camera2: {fileID: 0}
 --- !u!114 &114566724851043762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -478,7 +505,6 @@ MonoBehaviour:
   smokeL: {fileID: 198419262180447642}
   smokeR: {fileID: 198053573761403694}
   carSource: {fileID: 82331097287161696}
-  rb: {fileID: 54056151762481350}
 --- !u!146 &146441412920749704
 WheelCollider:
   m_ObjectHideFlags: 1
@@ -502,8 +528,8 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
+    m_ExtremumSlip: 30
+    m_ExtremumValue: 32
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
@@ -531,8 +557,8 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 300
-    m_ExtremumValue: 320
+    m_ExtremumSlip: 50
+    m_ExtremumValue: 52
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
@@ -560,8 +586,8 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
+    m_ExtremumSlip: 30
+    m_ExtremumValue: 32
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
@@ -589,8 +615,8 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 300
-    m_ExtremumValue: 320
+    m_ExtremumSlip: 50
+    m_ExtremumValue: 52
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
