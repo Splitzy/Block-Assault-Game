@@ -17,12 +17,13 @@ public class CarController : MonoBehaviour
     public float AccelInput { get; private set; }
 
     private Rigidbody rb;
-    private float TopSpeed = 150;
+    private readonly float topSpeed = 150;
 
     public void Start()
     {
         car = transform;
         rb = GetComponent<Rigidbody>();
+        EngineRev = Random.Range(0.1f, 0.5f);
     }
 
     public void FixedUpdate()
@@ -30,9 +31,13 @@ public class CarController : MonoBehaviour
         float motor = maxTorque * Input.GetAxis("Vertical");
         float steering = maxAngle * Input.GetAxis("Horizontal");
 
-        if (motor > TopSpeed)
+        float accel = Input.GetAxis("Vertical");
+
+        AccelInput = accel = Mathf.Clamp(accel, 0, 1);
+
+        if (motor > topSpeed)
         {
-            motor = TopSpeed;
+            motor = topSpeed;
         }
 
         if (Input.GetKey(KeyCode.Space))
