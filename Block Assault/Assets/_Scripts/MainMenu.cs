@@ -8,6 +8,10 @@ public class MainMenu : MonoBehaviour {
     public GameObject levelSelectUI;
     public GameObject settingsUI;
     public GameObject controlsUI;
+    public GameObject imageLevel1;
+    public GameObject imageLevel2;
+    public GameObject imageLevel3;
+    public GameObject imageComingSoon;
 
     void Start()
     {
@@ -17,10 +21,54 @@ public class MainMenu : MonoBehaviour {
         controlsUI.SetActive(false);
     }
 
-    public void PlayGame()
+    public void PlayLevel1()
     {
         Debug.Log("Playing game...");
         SceneManager.LoadScene("Level 1");
+    }
+
+    public void PlayLevel2()
+    {
+        Debug.Log("Playing game...");
+        //SceneManager.LoadScene("Level 2");
+    }
+
+    public void PlayLevel3()
+    {
+        Debug.Log("Playing game...");
+        //SceneManager.LoadScene("Level 3");
+    }
+
+    public void HoverImage1()
+    {
+        imageLevel1.SetActive(true);
+        imageLevel2.SetActive(false);
+        imageLevel3.SetActive(false);
+        imageComingSoon.SetActive(false);
+    }
+
+    public void HoverImage2()
+    {
+        imageLevel1.SetActive(false);
+        imageLevel2.SetActive(true);
+        imageLevel3.SetActive(false);
+        imageComingSoon.SetActive(false);
+    }
+
+    public void HoverImage3()
+    {
+        imageLevel1.SetActive(false);
+        imageLevel2.SetActive(false);
+        imageLevel3.SetActive(true);
+        imageComingSoon.SetActive(false);
+    }
+
+    public void HoverImageComingSoon()
+    {
+        imageLevel1.SetActive(false);
+        imageLevel2.SetActive(false);
+        imageLevel3.SetActive(false);
+        imageComingSoon.SetActive(true);
     }
 
     public void LoadOptions()
