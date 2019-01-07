@@ -1747,7 +1747,7 @@ GameObject:
   - component: {fileID: 1099228184}
   - component: {fileID: 1099228183}
   m_Layer: 5
-  m_Name: Level 1 Image
+  m_Name: Level 1 Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1937,7 +1937,7 @@ GameObject:
   - component: {fileID: 1182294517}
   - component: {fileID: 1182294516}
   m_Layer: 5
-  m_Name: Level 1 Image (1)
+  m_Name: Level 2 Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1980,7 +1980,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 49b611e658efbf443b686a4036f74fe3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e65ee4d7e313d346ac28f4d77ad9be8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
