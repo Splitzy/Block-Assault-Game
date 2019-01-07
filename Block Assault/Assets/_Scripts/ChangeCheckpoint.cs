@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChangeCheckpoint : MonoBehaviour
 {
     public GameObject checkpoint;
+    public GameObject checkpoint2;
     public ParticleSystem confetti1;
     public ParticleSystem confetti2;
 
@@ -16,6 +17,7 @@ public class ChangeCheckpoint : MonoBehaviour
             Destroy(gameObject);
             confetti1.Play();
             confetti2.Play();
+            checkpoint2.SetActive(true);
         } 
     }
 
