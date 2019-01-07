@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour {
     public GameObject settingsUI;
     public GameObject controlsUI;
 
+    public string currentScene;
+
     private void Start()
     {
         pauseMenuUI.SetActive(false);
@@ -79,7 +81,7 @@ public class PauseMenu : MonoBehaviour {
     public void Restart()
     {
         Debug.Log("Restarting game");
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(currentScene);
         Time.timeScale = 1f;
         isPaused = false;
     }
