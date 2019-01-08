@@ -11,7 +11,6 @@ public class MainMenu : MonoBehaviour {
     public GameObject imageLevel1;
     public GameObject imageLevel2;
     public GameObject imageLevel3;
-    public GameObject imageComingSoon;
 
     void Start()
     {
@@ -36,7 +35,7 @@ public class MainMenu : MonoBehaviour {
     public void PlayLevel3()
     {
         Debug.Log("Playing game...");
-        //SceneManager.LoadScene("Level 3");
+        SceneManager.LoadScene("Level 3");
     }
 
     public void HoverImage1()
@@ -44,7 +43,6 @@ public class MainMenu : MonoBehaviour {
         imageLevel1.SetActive(true);
         imageLevel2.SetActive(false);
         imageLevel3.SetActive(false);
-        imageComingSoon.SetActive(false);
     }
 
     public void HoverImage2()
@@ -52,7 +50,6 @@ public class MainMenu : MonoBehaviour {
         imageLevel1.SetActive(false);
         imageLevel2.SetActive(true);
         imageLevel3.SetActive(false);
-        imageComingSoon.SetActive(false);
     }
 
     public void HoverImage3()
@@ -60,15 +57,6 @@ public class MainMenu : MonoBehaviour {
         imageLevel1.SetActive(false);
         imageLevel2.SetActive(false);
         imageLevel3.SetActive(true);
-        imageComingSoon.SetActive(false);
-    }
-
-    public void HoverImageComingSoon()
-    {
-        imageLevel1.SetActive(false);
-        imageLevel2.SetActive(false);
-        imageLevel3.SetActive(false);
-        imageComingSoon.SetActive(true);
     }
 
     public void LoadOptions()
