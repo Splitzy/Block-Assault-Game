@@ -230,7 +230,6 @@ MonoBehaviour:
   imageLevel1: {fileID: 1099228181}
   imageLevel2: {fileID: 1182294514}
   imageLevel3: {fileID: 1527998136}
-  imageComingSoon: {fileID: 0}
 --- !u!1 &50180703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3662,7 +3661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1758100953
 RectTransform:
   m_ObjectHideFlags: 0

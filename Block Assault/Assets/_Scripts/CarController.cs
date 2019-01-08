@@ -23,7 +23,7 @@ public class CarController : MonoBehaviour
     {
         car = transform;
         rb = GetComponent<Rigidbody>();
-        EngineRev = Random.Range(0.1f, 0.5f);
+        EngineRev = 0.2f;
     }
 
     public void FixedUpdate()
