@@ -10,8 +10,8 @@ public class TimerController : MonoBehaviour {
     public GameObject star2;
     static bool isFinished;
     //private int stars = 3;
-    public static float threeStarTime = 60;
-    public static float twoStarTime = 120;
+    public static float threeStarTime = 90;
+    public static float twoStarTime = 180;
     public static float time;
 
     private void Start()
@@ -61,6 +61,15 @@ public class TimerController : MonoBehaviour {
             timerLabel.color = Color.red;
             star1.SetActive(false);
             star2.SetActive(false);
+        }
+
+        if(time >= threeStarTime - 10)
+        {
+            star1.GetComponent<Animator>().SetTrigger("Animate");
+        }
+        else if (time >= twoStarTime - 10)
+        {
+            star2.GetComponent<Animator>().SetTrigger("Animate");
         }
 
     }
