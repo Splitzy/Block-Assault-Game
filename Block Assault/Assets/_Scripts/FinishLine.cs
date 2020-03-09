@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour {
 
@@ -16,11 +17,15 @@ public class FinishLine : MonoBehaviour {
     private GameObject playerCamera;
     [SerializeField]
     private GameObject winCamera;
+    [SerializeField]
+    private int nextScene;
 
-    //void Start()
-    //{
-    //    player = GameObject.FindWithTag("Player");
-    //}
+    string winTxt;
+
+    void Start()
+    {
+        nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -34,19 +39,39 @@ public class FinishLine : MonoBehaviour {
             winUI.SetActive(true);
             Destroy(checkpoint);
             TimerController.Finish();
+
             if (TimerController.time <= TimerController.threeStarTime)
             {
-                starTxt.text = "YOU WON 3 STARS!";
+                winTxt = "YOU WON 3 STARS!Advance to the next level!";
+                Win(winTxt);
             }
             else if (TimerController.time > TimerController.threeStarTime && TimerController.time <= TimerController.twoStarTime)
             {
-                starTxt.text = "YOU WON 2 STARS!";
+                winTxt = "You won 2 stars! Advance to the next level!";
+                Win(winTxt);
             }
             else
             {
-                starTxt.text = "YOU WON 1 STAR!";
+                starTxt.text = "YOU WON 1 STAR! Try again!";
             }
+
             Destroy(gameObject);
+        }
+    }
+
+    void Win(string s)
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            starTxt.text = "Game Complete";
+        }
+        else
+        {
+            starTxt.text = s;
+            if (nextScene > PlayerPrefs.GetInt("levelAt"))
+            {
+                PlayerPrefs.SetInt("levelAt", nextScene);
+            }
         }
     }
 

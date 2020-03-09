@@ -10,13 +10,15 @@ public class PauseMenu : MonoBehaviour {
     public GameObject settingsUI;
     public GameObject controlsUI;
 
-    public string currentScene;
+    public int currentScene;
 
     private void Start()
     {
         pauseMenuUI.SetActive(false);
         settingsUI.SetActive(false);
         controlsUI.SetActive(false);
+
+        currentScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -55,32 +57,28 @@ public class PauseMenu : MonoBehaviour {
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
-        Debug.Log("Loading Menu");
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quitting Game");
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 
     public void LoadOptions()
     {
-        Debug.Log("Loading Options");
         settingsUI.SetActive(true);
         pauseMenuUI.SetActive(false);
     }
 
     public void Return()
     {
-        Debug.Log("Returning to Pause Menu...");
         settingsUI.SetActive(false);
         pauseMenuUI.SetActive(true);
     }
 
     public void Restart()
     {
-        Debug.Log("Restarting game");
         SceneManager.LoadScene(currentScene);
         Time.timeScale = 1f;
         isPaused = false;

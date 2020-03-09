@@ -22,19 +22,16 @@ public class MainMenu : MonoBehaviour {
 
     public void PlayLevel1()
     {
-        Debug.Log("Playing Level 1...");
         SceneManager.LoadScene("Level 1");
     }
 
     public void PlayLevel2()
-    {
-        Debug.Log("Playing Level 2...");
+    { 
         SceneManager.LoadScene("Level 2");
     }
 
     public void PlayLevel3()
     {
-        Debug.Log("Playing game...");
         SceneManager.LoadScene("Level 3");
     }
 
@@ -61,14 +58,12 @@ public class MainMenu : MonoBehaviour {
 
     public void LoadOptions()
     {
-        Debug.Log("Loading Options");
         settingsUI.SetActive(true);
         mainMenuUI.SetActive(false);
     }
 
     public void LoadLevelSelect()
     {
-        Debug.Log("Loading Level Select");
         mainMenuUI.SetActive(false);
         levelSelectUI.SetActive(true);
     }
@@ -87,7 +82,6 @@ public class MainMenu : MonoBehaviour {
 
     public void Return()
     {
-        Debug.Log("Returning to main menu");
         levelSelectUI.SetActive(false);
         settingsUI.SetActive(false);
         mainMenuUI.SetActive(true);
@@ -95,7 +89,7 @@ public class MainMenu : MonoBehaviour {
 
     public void QuitGame()
     {
-        Debug.Log("Quitting game...");
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 }
