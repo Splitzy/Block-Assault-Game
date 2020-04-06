@@ -4,13 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
-    public GameObject mainMenuUI;
-    public GameObject levelSelectUI;
-    public GameObject settingsUI;
-    public GameObject controlsUI;
-    public GameObject imageLevel1;
-    public GameObject imageLevel2;
-    public GameObject imageLevel3;
+    public GameObject mainMenuUI, levelSelectUI, settingsUI, controlsUI;
+    public GameObject[] imageLevel;
 
     void Start()
     {
@@ -35,25 +30,78 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("Level 3");
     }
 
+    public void PlayLevel4()
+    {
+        SceneManager.LoadScene("Level 4");
+    }
+
     public void HoverImage1()
     {
-        imageLevel1.SetActive(true);
-        imageLevel2.SetActive(false);
-        imageLevel3.SetActive(false);
+        int index = 0;
+
+        for(int i = 0; i < imageLevel.Length; i++)
+        {
+            if (i == index)
+            {
+                imageLevel[i].SetActive(true);
+            }
+            else
+            {
+                imageLevel[i].SetActive(false);
+            }
+        }
+
     }
 
     public void HoverImage2()
     {
-        imageLevel1.SetActive(false);
-        imageLevel2.SetActive(true);
-        imageLevel3.SetActive(false);
+        int index = 1;
+
+        for (int i = 0; i < imageLevel.Length; i++)
+        {
+            if (i == index)
+            {
+                imageLevel[i].SetActive(true);
+            }
+            else
+            {
+                imageLevel[i].SetActive(false);
+            }
+        }
     }
 
     public void HoverImage3()
     {
-        imageLevel1.SetActive(false);
-        imageLevel2.SetActive(false);
-        imageLevel3.SetActive(true);
+        int index = 2;
+
+        for (int i = 0; i < imageLevel.Length; i++)
+        {
+            if (i == index)
+            {
+                imageLevel[i].SetActive(true);
+            }
+            else
+            {
+                imageLevel[i].SetActive(false);
+            }
+        }
+    }
+
+    public void HoverImage4()
+    {
+        int index = 3;
+
+        for (int i = 0; i < imageLevel.Length; i++)
+        {
+            if (i == index)
+            {
+                imageLevel[i].SetActive(true);
+            }
+            else
+            {
+                imageLevel[i].SetActive(false);
+            }
+        }
     }
 
     public void LoadOptions()

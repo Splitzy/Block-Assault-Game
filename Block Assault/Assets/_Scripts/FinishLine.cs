@@ -42,7 +42,7 @@ public class FinishLine : MonoBehaviour {
 
             if (TimerController.time <= TimerController.threeStarTime)
             {
-                winTxt = "YOU WON 3 STARS!Advance to the next level!";
+                winTxt = "YOU WON 3 STARS! Advance to the next level!";
                 Win(winTxt);
             }
             else if (TimerController.time > TimerController.threeStarTime && TimerController.time <= TimerController.twoStarTime)
@@ -61,7 +61,7 @@ public class FinishLine : MonoBehaviour {
 
     void Win(string s)
     {
-        if(SceneManager.GetActiveScene().buildIndex == 3)
+        if(SceneManager.GetActiveScene().buildIndex == 4)
         {
             starTxt.text = "Game Complete";
         }
