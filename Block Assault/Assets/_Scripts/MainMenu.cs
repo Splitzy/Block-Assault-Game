@@ -40,6 +40,11 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("Level 5");
     }
 
+    public void PlayLevel6()
+    {
+        SceneManager.LoadScene("Level 6");
+    }
+
     public void HoverImage1()
     {
         int index = 0;
@@ -112,6 +117,23 @@ public class MainMenu : MonoBehaviour {
     public void HoverImage5()
     {
         int index = 4;
+
+        for (int i = 0; i < imageLevel.Length; i++)
+        {
+            if (i == index)
+            {
+                imageLevel[i].SetActive(true);
+            }
+            else
+            {
+                imageLevel[i].SetActive(false);
+            }
+        }
+    }
+
+    public void HoverImage6()
+    {
+        int index = 5;
 
         for (int i = 0; i < imageLevel.Length; i++)
         {

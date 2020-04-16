@@ -12,6 +12,7 @@ public class FinishLine : MonoBehaviour {
     public Text starTxt;
     public ParticleSystem confetti1;
     public ParticleSystem confetti2;
+    public Button nxtLevelButton;
     //GameObject player;
     [SerializeField]
     private GameObject playerCamera;
@@ -43,16 +44,19 @@ public class FinishLine : MonoBehaviour {
             if (TimerController.time <= TimerController.threeStarTime)
             {
                 winTxt = "YOU WON 3 STARS! Advance to the next level!";
+                nxtLevelButton.interactable = true;
                 Win(winTxt);
             }
             else if (TimerController.time > TimerController.threeStarTime && TimerController.time <= TimerController.twoStarTime)
             {
                 winTxt = "You won 2 stars! Advance to the next level!";
+                nxtLevelButton.interactable = true;
                 Win(winTxt);
             }
             else
             {
                 starTxt.text = "YOU WON 1 STAR! Try again!";
+                nxtLevelButton.interactable = false;
             }
 
             Destroy(gameObject);
@@ -61,9 +65,10 @@ public class FinishLine : MonoBehaviour {
 
     void Win(string s)
     {
-        if(SceneManager.GetActiveScene().buildIndex == 4)
+        if(SceneManager.GetActiveScene().buildIndex == 6)
         {
             starTxt.text = "Game Complete";
+            nxtLevelButton.interactable = false;
         }
         else
         {

@@ -90,6 +90,11 @@ public class PauseMenu : MonoBehaviour {
         controlsUI.SetActive(true);
     }
 
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(currentScene + 1);
+    }
+
     public void ReturnFromControls()
     {
         settingsUI.SetActive(true);
